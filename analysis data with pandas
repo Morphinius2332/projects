@@ -1,0 +1,14 @@
+import pandas as pd
+
+# load data
+data = pd.read_csv('data.csv')
+
+# display basic statistics
+print(data.describe())
+
+# group data by a categorical variable and calculate the mean
+grouped_data = data.groupby('category')['value'].mean()
+print(grouped_data)
+
+# plot data
+data.plot(x='date', y='value')
