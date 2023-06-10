@@ -1,1 +1,1 @@
-# simple-code-and-self-education-
+# all_about_projects
