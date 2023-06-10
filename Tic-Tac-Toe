@@ -1,0 +1,36 @@
+import pygame
+
+# initialize Pygame
+pygame.init()
+
+# set up the game window
+window_size = (400, 400)
+screen = pygame.display.set_mode(window_size)
+pygame.display.set_caption("Tic Tac Toe")
+
+# define colors
+white = (255, 255, 255)
+black = (0, 0, 0)
+
+# draw the game board
+board_size = 300
+board_pos = (50, 50)
+cell_size = board_size // 3
+for i in range(3):
+    for j in range(3):
+        rect = pygame.Rect(board_pos[0] + i * cell_size, board_pos[1] + j * cell_size, cell_size, cell_size)
+        pygame.draw.rect(screen, white, rect, 2)
+
+# main game loop
+running = True
+while running:
+    # handle events
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # update the screen
+    pygame.display.update()
+
+# quit Pygame when the game loop is done
+pygame.quit()
